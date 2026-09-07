@@ -763,9 +763,9 @@ libbitcoin_util_a_SOURCES = \
 #
 
 # cli #
-libtwoore_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libtwoore_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libtwoore_cli_a_SOURCES = \
+libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbitcoin_cli_a_SOURCES = \
   compat/stdin.h \
   compat/stdin.cpp \
   rpc/client.cpp \
