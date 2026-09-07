@@ -67,3 +67,6 @@ twoore.conf
 __pycache__/
 *.pyc
 node_modules/
+src/obj/build.h
+src/test/data/*.h
+src/bench/data/*.h
