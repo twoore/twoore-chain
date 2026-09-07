@@ -16,13 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create missing Makefile.am files
-        run: |
-          mkdir -p src/qt src/qt/test src/test
-          touch src/qt/Makefile.am
-          touch src/qt/test/Makefile.am
-          touch src/test/Makefile.am
-
       - name: Install dependencies (macOS)
         if: startsWith(matrix.os, 'macos')
         run: brew install automake libtool boost libevent openssl sqlite zmq
