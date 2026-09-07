@@ -1,0 +1,69 @@
+# Build artifacts
+*.o
+*.a
+*.lo
+*.la
+*.lai
+*.Po
+*.Plo
+*.d
+*.dirstamp
+.deps/
+.libs/
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.h
+config.h.in
+config.log
+config.status
+libtool
+stamp-h1
+
+# Autotools generated files
+config.guess
+config.sub
+install-sh
+ltmain.sh
+depcomp
+missing
+compile
+
+# Executables and binaries
+src/bitcoin-cli
+src/bitcoin-tx
+src/bitcoin-util
+src/bitcoin-wallet
+src/bitcoind
+src/twoore-cli
+src/twoore-miner
+src/twoored
+src/test/test_bitcoin
+src/test/fuzz/fuzz
+src/qt/bitcoin-qt
+
+# Wallet / private keys / blockchain data
+*.dat
+*.key
+*.wallet
+wallet.dat
+*.lock
+blocks/
+chainstate/
+*.log
+*.pid
+
+# Configuration files with real credentials
+twoore.conf
+*.conf
+!*.conf.example
+
+# Environment
+.env
+.env.*
+
+# Python / Node caches
+__pycache__/
+*.pyc
+node_modules/
