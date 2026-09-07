@@ -775,7 +775,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # twoored & bitcoin-node binaries #
-bitcoin_daemon_sources = twoored.cpp
+bitcoin_daemon_sources = bitcoind.cpp
 bitcoin_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 bitcoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
 bitcoin_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
@@ -798,7 +798,7 @@ bitcoin_bin_ldadd = \
 
 bitcoin_bin_ldadd += $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
 
-twoored_SOURCES = $(bitcoin_daemon_sources) init/twoored.cpp
+twoored_SOURCES = $(bitcoin_daemon_sources) init/bitcoind.cpp
 twoored_CPPFLAGS = $(bitcoin_bin_cppflags)
 twoored_CXXFLAGS = $(bitcoin_bin_cxxflags)
 twoored_LDFLAGS = $(bitcoin_bin_ldflags)
@@ -811,7 +811,7 @@ bitcoin_node_LDFLAGS = $(bitcoin_bin_ldflags)
 bitcoin_node_LDADD = $(LIBBITCOIN_NODE) $(bitcoin_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
 # twoore-cli binary #
-twoore_cli_SOURCES = twoore-cli.cpp
+twoore_cli_SOURCES = bitcoin-cli.cpp
 twoore_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 twoore_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 twoore_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
