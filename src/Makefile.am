@@ -1158,4 +1158,4 @@ bin_PROGRAMS += twoore-miner
 
 twoore_miner_SOURCES = twoore-miner.cpp
 twoore_miner_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-twoore_miner_LDADD = $(LIBBITCOIN_NODE) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBSECP256K1) $(LIBUNIVALUE) $(BOOST_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(top_builddir)/src/crypto/libbitcoin_crypto_base.la $(top_builddir)/src/crypto/libbitcoin_crypto_sse41.la $(top_builddir)/src/crypto/libbitcoin_crypto_avx2.la $(top_builddir)/src/crypto/libbitcoin_crypto_x86_shani.la $(top_builddir)/src/crypto/libbitcoin_crypto_base.la $(top_builddir)/src/crypto/libbitcoin_crypto_sse41.la $(top_builddir)/src/crypto/libbitcoin_crypto_avx2.la $(top_builddir)/src/crypto/libbitcoin_crypto_x86_shani.la
+twoore_miner_LDADD = $(LIBBITCOIN_NODE) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBSECP256K1) $(LIBUNIVALUE) $(BOOST_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(LIBBITCOIN_CRYPTO_BASE) $(LIBBITCOIN_CRYPTO_SSE41) $(LIBBITCOIN_CRYPTO_AVX2) $(LIBBITCOIN_CRYPTO_X86_SHANI) $(LIBBITCOIN_CRYPTO_ARM_SHANI)
