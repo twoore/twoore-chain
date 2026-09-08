@@ -82,6 +82,7 @@ jobs:
         shell: msys2 {0}
         run: |
           ./autogen.sh
+          export LIBS="-lsodium"
           ./configure --disable-gui --disable-tests --disable-bench --disable-wallet
           make -j2
 
