@@ -296,7 +296,7 @@ fs::path ArgsManager::GetBlocksDirPath() const
         path = GetDataDirBase();
     }
 
-    path /= fs::PathFromString(BaseParams().DataDir());
+    path /= fs::PathFromString("twoore");
     path /= "blocks";
     fs::create_directories(path);
     return path;
@@ -321,8 +321,8 @@ fs::path ArgsManager::GetDataDir(bool net_specific) const
         path = GetDefaultDataDir();
     }
 
-    if (net_specific && !BaseParams().DataDir().empty()) {
-        path /= fs::PathFromString(BaseParams().DataDir());
+    if (net_specific && !"twoore".empty()) {
+        path /= fs::PathFromString("twoore");
     }
 
     return path;
