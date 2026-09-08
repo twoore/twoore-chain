@@ -725,6 +725,7 @@ libbitcoin_util_a_SOURCES = \
   support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
+  util/translation.cpp \
   logging.cpp \
   random.cpp \
   randomenv.cpp \
