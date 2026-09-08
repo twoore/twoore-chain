@@ -33,8 +33,20 @@ public:
     {
     }
 
+    std::string DataDir() const { return strDataDir; }
     uint16_t RPCPort() const { return static_cast<uint16_t>(m_rpc_port); }
     uint16_t OnionServiceTargetPort() const { return static_cast<uint16_t>(m_onion_service_target_port); }
 };
+
+
+#include <memory>
+
+class ArgsManager;
+enum class ChainType;
+
+std::unique_ptr<CBaseChainParams> CreateBaseChainParams(const ChainType chain);
+void SetupChainParamsBaseOptions(ArgsManager& argsman);
+void SelectBaseParams(const ChainType chain);
+const CBaseChainParams& BaseParams();
 
 #endif // BITCOIN_CHAINPARAMSBASE_H
