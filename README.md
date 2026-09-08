@@ -4,7 +4,7 @@ TWOORE integration/staging tree
 https://twoore.org
 
 For an immediately usable, binary version of the TWOORE software, see  
-https://twoore.org/en/download/.
+https://github.com/twoore/twoore-chain/releases/tag/v0.1.10.
 
 What is TWOORE?
 ---------------
