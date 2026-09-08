@@ -43,6 +43,7 @@
 #include <event2/util.h>
 
 #include <support/events.h>
+#include "chainparams.h"
 
 /** Maximum size of http request (request line + headers) */
 static const size_t MAX_HEADERS_SIZE = 8192;
