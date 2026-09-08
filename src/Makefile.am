@@ -782,7 +782,7 @@ bitcoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
 bitcoin_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-bitcoin_daemon_sources += twoored-res.rc
+bitcoin_daemon_sources += bitcoind-res.rc
 endif
 
 bitcoin_bin_ldadd = \
@@ -818,7 +818,7 @@ twoore_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 twoore_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-twoore_cli_SOURCES += twoore-cli-res.rc
+twoore_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
 twoore_cli_LDADD = \
