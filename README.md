@@ -52,3 +52,49 @@ the included optimized miner (`cpuminer-opt`). To start mining:
 ```bash
 cd ~/cpuminer-opt-26.1
 ./cpuminer -a sha256d -o http://127.0.0.1:8223 -O twoore:twoorepass --coinbase-addr=1FKqgEb2kHdfzgxGBQSM4mAVDfwqyF2m6x
+
+## Building from source
+
+### Prerequisites (C++ toolchain and libraries)
+
+- C++20 compiler (GCC 10+, Clang 12+, or MSVC 2019+)
+- Autotools (`autoconf`, `automake`, `libtool`)
+- Boost (>=1.73)
+- libevent (>=2.1.8)
+- OpenSSL
+- SQLite (>=3.7.17)
+- ZeroMQ (>=4) and libsodium (for full node features)
+
+### Install dependencies
+
+#### Linux (Ubuntu/Debian)
+
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev libsqlite3-dev libzmq3-dev libsodium-dev
+```
+
+#### macOS
+
+```bash
+brew install automake libtool boost libevent openssl sqlite zmq libsodium
+```
+
+#### Windows (MSYS2 MINGW64)
+
+```bash
+pacman -S --needed base-devel mingw-w64-x86_64-toolchain mingw-w64-x86_64-boost mingw-w64-x86_64-libevent mingw-w64-x86_64-openssl mingw-w64-x86_64-sqlite3 mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-autotools mingw-w64-x86_64-libtool mingw-w64-x86_64-pkg-config git
+```
+
+### Build commands
+
+```bash
+./autogen.sh
+./configure --disable-gui --disable-tests --disable-bench
+make -j2
+```
+
+Binaries will be in `src/`:
+- `twoored` (or `twoored.exe` on Windows)
+- `twoore-cli`
+- `twoore-miner`
