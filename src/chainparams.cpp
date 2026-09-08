@@ -129,6 +129,5 @@ std::unique_ptr<const CChainParams> CreateChainParams(const ArgsManager& args, c
 
 void SelectParams(const ChainType chain)
 {
-    SelectBaseParams(chain);
     globalChainParams = CreateChainParams(gArgs, chain);
 }

@@ -41,6 +41,7 @@
 #include <event2/event.h>
 #include <event2/thread.h>
 #include <event2/util.h>
+#include "chainparams.h"
 
 /** Default control ip and port */
 const std::string DEFAULT_TOR_CONTROL = "127.0.0.1:" + ToString(DEFAULT_TOR_CONTROL_PORT);
@@ -711,5 +712,5 @@ CService DefaultOnionServiceTarget()
 {
     struct in_addr onion_service_target;
     onion_service_target.s_addr = htonl(INADDR_LOOPBACK);
-    return {onion_service_target, BaseParams().OnionServiceTargetPort()};
+    return {onion_service_target, 8333};
 }
