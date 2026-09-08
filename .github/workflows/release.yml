@@ -53,7 +53,7 @@ jobs:
           name: twoore-${{ matrix.os }}
           path: artifacts/
 
-  build-windows:
+
     runs-on: windows-latest
     steps:
       - name: Checkout
