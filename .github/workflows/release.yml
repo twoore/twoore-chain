@@ -95,3 +95,46 @@ jobs:
         with:
           name: twoore-windows
           path: artifacts/
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up MSYS2
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            base-devel
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-boost
+            mingw-w64-x86_64-libevent
+            mingw-w64-x86_64-openssl
+            mingw-w64-x86_64-sqlite3
+            mingw-w64-x86_64-zeromq
+            mingw-w64-x86_64-autotools
+            mingw-w64-x86_64-libtool
+            mingw-w64-x86_64-pkg-config
+            git
+
+      - name: Build
+        shell: msys2 {0}
+        run: |
+          ./autogen.sh
+          ./configure --disable-gui --disable-tests --disable-bench --disable-wallet
+          make -j2
+
+      - name: Package artifacts
+        shell: msys2 {0}
+        run: |
+          mkdir -p artifacts
+          tar -czf artifacts/twoore-windows-x86_64.tar.gz src/twoored.exe src/twoore-cli.exe src/twoore-miner.exe
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: twoore-windows
+          path: artifacts/
