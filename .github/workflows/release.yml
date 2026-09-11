@@ -72,6 +72,7 @@ jobs:
             mingw-w64-x86_64-openssl
             mingw-w64-x86_64-sqlite3
             mingw-w64-x86_64-zeromq
+
             mingw-w64-x86_64-libsodium
             mingw-w64-x86_64-autotools
             mingw-w64-x86_64-libtool
@@ -97,3 +98,24 @@ jobs:
         with:
           name: twoore-windows
           path: artifacts/
+  release:
+    needs: [build, build-windows]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/twoore-ubuntu-latest/*.zip
+            artifacts/twoore-macos-latest/*.zip
+            artifacts/twoore-macos-14/*.zip
+            artifacts/twoore-windows/*.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
