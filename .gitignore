@@ -70,3 +70,12 @@ node_modules/
 src/obj/build.h
 src/test/data/*.h
 src/bench/data/*.h
+configure
+configure~
+libbitcoinconsensus.pc
+share/setup.nsi
+src/config/bitcoin-config.h
+src/obj/build.h
+test/config.ini
+src/.!*!bitcoind
+src/start-twoore.sh
