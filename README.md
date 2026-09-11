@@ -98,3 +98,23 @@ Binaries will be in `src/`:
 - `twoored` (or `twoored.exe` on Windows)
 - `twoore-cli`
 - `twoore-miner`
+
+## Download
+
+Official binaries for all platforms (Linux, macOS Intel, macOS Apple Silicon, Windows):
+
+**[⬇ Download Latest Release](https://github.com/twoore/twoore-chain/releases/latest)**
+
+Or pick your platform directly:
+
+| Platform | Download |
+|----------|----------|
+| Linux x86_64 | [twoore-ubuntu-latest.zip](https://github.com/twoore/twoore-chain/releases/latest/download/twoore-ubuntu-latest.zip) |
+| macOS Intel | [twoore-macos-latest.zip](https://github.com/twoore/twoore-chain/releases/latest/download/twoore-macos-latest.zip) |
+| macOS Apple Silicon | [twoore-macos-14.zip](https://github.com/twoore/twoore-chain/releases/latest/download/twoore-macos-14.zip) |
+| Windows x86_64 | [twoore-windows.zip](https://github.com/twoore/twoore-chain/releases/latest/download/twoore-windows.zip) |
+
+Each archive contains:
+- `twoored` – full node
+- `twoore-cli` – wallet CLI
+- `twoore-miner` – CPU miner
